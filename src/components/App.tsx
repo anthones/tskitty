@@ -11,15 +11,8 @@ interface AppProps {
 }
 
 class _App extends React.Component<AppProps> {
-  componentDidUpdate(prevProps: AppProps): void {
-    if (!prevProps.images.length && this.props.images.length) {
-      this.setState({ fetching: false });
-    }
-  }
-
   onButtonClick = (): void => {
     this.props.fetchImage();
-    this.setState({ fetching: true });
   };
 
   onImageClick = (id: number): void => {
