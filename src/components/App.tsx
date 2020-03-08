@@ -20,11 +20,14 @@ class _App extends React.Component<AppProps> {
   };
 
   renderList(): JSX.Element[] {
-    return this.props.images.map((image: Image) => {
+    return this.props.images.map(({ url, id }: Image) => {
       return (
-        <div onClick={() => this.onImageClick(image.id)} key={image.id}>
-          <img src={image.url} alt={`${image.id}`}></img>
-        </div>
+        <img
+          src={url}
+          alt={`${id}`}
+          onClick={() => this.onImageClick(id)}
+          key={id}
+        ></img>
       );
     });
   }
