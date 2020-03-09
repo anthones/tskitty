@@ -3,7 +3,7 @@ import { Dispatch } from "redux";
 import { ActionTypes } from "./types";
 
 export interface Image {
-  id: number;
+  id: string;
   url: string;
 }
 
@@ -14,7 +14,7 @@ export interface FetchImageAction {
 
 export interface DeleteImageAction {
   type: ActionTypes.deleteImage;
-  payload: number;
+  payload: string;
 }
 
 const url = "https://api.thecatapi.com/v1/images/search?limit=20";
@@ -30,7 +30,7 @@ export const fetchImage = () => {
   };
 };
 
-export const deleteImage = (id: number): DeleteImageAction => {
+export const deleteImage = (id: string): DeleteImageAction => {
   return {
     type: ActionTypes.deleteImage,
     payload: id

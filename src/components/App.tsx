@@ -15,7 +15,7 @@ class _App extends React.Component<AppProps> {
     this.props.fetchImage();
   };
 
-  onImageClick = (id: number): void => {
+  onImageClick = (id: string): void => {
     this.props.deleteImage(id);
   };
 
@@ -24,7 +24,7 @@ class _App extends React.Component<AppProps> {
       return (
         <img
           src={url}
-          alt={`${id}`}
+          alt={id}
           onClick={() => this.onImageClick(id)}
           key={id}
         ></img>
